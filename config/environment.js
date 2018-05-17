@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'clickgram',
+    podModulePrefix: 'clickgram/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
