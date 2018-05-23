@@ -24,6 +24,15 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.firebase = {
+    apiKey: "AIzaSyCcBV_GuRq-XK6h65SAOHxx0HrhWc5EEEE",
+    authDomain: "clickgram0.firebaseapp.com",
+    databaseURL: "https://clickgram0.firebaseio.com",
+    projectId: "clickgram0",
+    storageBucket: "clickgram0.appspot.com",
+    messagingSenderId: "987735652873"
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
