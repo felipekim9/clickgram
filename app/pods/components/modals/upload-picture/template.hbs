@@ -1,0 +1,38 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{#file-dropzone name="photos" as |dropzone queue|}}
+          {{#if dropzone.active}}
+            {{#if dropzone.valid}}
+              Drop to upload
+            {{else}}
+              Invalid
+            {{/if}}
+            {{else if queue.files.length}} Uploading {{queue.files.length}} files. ({{queue.progress}}%)
+          {{else}}
+            <h4>Upload Images</h4>
+            <p>
+              {{#if dropzone.supported}}
+                Drag and drop images onto this area to upload them or
+              {{/if}}
+              {{#file-upload name="photos" accept="image/*" multiple=true onfileadd=(action "uploadImage")}}
+                <a id="upload-image" tabindex=0>Add an Image.</a>
+              {{/file-upload}}
+            </p>
+          {{/if}}
+        {{/file-dropzone}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
